@@ -29,4 +29,8 @@ public class QuestionService {
     public Question addQuestion(Question question){
        return questionDao.save(question);
     }
+
+    public Question updateQuestion(Question question){
+        return questionDao.save(question);
+    }
 }
