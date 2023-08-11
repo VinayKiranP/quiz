@@ -1,15 +1,23 @@
 package com.vk.quiz.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vk.quiz.model.Question;
+import com.vk.quiz.service.QuestionService;
+
 @RestController
 @RequestMapping("question")
 public class QuestionController {
+    @Autowired
+    QuestionService questionService;
 
     @GetMapping("/allQuestions")
-    public String getAllQuestions(){
-        return "Vk";
+    public List<Question> getAllQuestions(){
+        return questionService.getAllQuestions();
     }
 }
