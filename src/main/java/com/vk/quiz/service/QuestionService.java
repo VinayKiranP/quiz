@@ -33,4 +33,9 @@ public class QuestionService {
     public Question updateQuestion(Question question){
         return questionDao.save(question);
     }
+
+    public Question deleteQuestion(Question question){
+        question.setDeleted(true);
+        return questionDao.save(question);
+    }
 }

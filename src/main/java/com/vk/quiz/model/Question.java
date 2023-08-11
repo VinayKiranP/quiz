@@ -15,4 +15,5 @@ public class Question {
     private String category;
     private String difficultyLevel;
     private String answer;
+    private Boolean deleted=false;
 }
