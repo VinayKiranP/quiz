@@ -62,7 +62,7 @@ public class QuestionController {
             statusCode = HttpStatus.BAD_GATEWAY; 
             response.setError(ErrorDTO.getErrorFromException(e));
             response.setSuccess(false);
-            log.error("error in Getting Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+            log.error("error in Getting Questions by Id error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
         }
         return new ResponseEntity<>(response, statusCode);
     }
@@ -79,7 +79,7 @@ public class QuestionController {
             statusCode = HttpStatus.BAD_GATEWAY; 
             response.setError(ErrorDTO.getErrorFromException(e));
             response.setSuccess(false);
-            log.error("error in Getting Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+            log.error("error in Getting Questions by Category error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
         }
         return new ResponseEntity<>(response, statusCode);
     }
@@ -96,7 +96,7 @@ public class QuestionController {
             statusCode = HttpStatus.BAD_GATEWAY; 
             response.setError(ErrorDTO.getErrorFromException(e));
             response.setSuccess(false);
-            log.error("error in Getting Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+            log.error("error in Adding Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
         }
         return new ResponseEntity<>(response, statusCode);
     }
@@ -113,7 +113,7 @@ public class QuestionController {
             statusCode = HttpStatus.BAD_GATEWAY; 
             response.setError(ErrorDTO.getErrorFromException(e));
             response.setSuccess(false);
-            log.error("error in Getting Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+            log.error("error in Updating Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
         }
         return new ResponseEntity<>(response, statusCode);
     }
@@ -130,7 +130,7 @@ public class QuestionController {
             statusCode = HttpStatus.BAD_GATEWAY; 
             response.setError(ErrorDTO.getErrorFromException(e));
             response.setSuccess(false);
-            log.error("error in Getting Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+            log.error("error in Deleting Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
         }
         return new ResponseEntity<>(response, statusCode);
     }
