@@ -51,27 +51,87 @@ public class QuestionController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Question> getQuestionById(@PathVariable Integer id){
-        return questionService.getQuestionsById(id);
+    public ResponseEntity<ResponseDto> getQuestionById(@PathVariable Integer id){
+        ResponseDto response = new ResponseDto();
+        HttpStatus statusCode = HttpStatus.OK;
+
+        try {
+            response.setData(questionService.getQuestionsById(id));
+            response.setSuccess(true);
+        } catch (Exception e) {
+            statusCode = HttpStatus.BAD_GATEWAY; 
+            response.setError(ErrorDTO.getErrorFromException(e));
+            response.setSuccess(false);
+            log.error("error in Getting Questions by Id error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+        }
+        return new ResponseEntity<>(response, statusCode);
     }
 
     @GetMapping("/category/{category}")
-    public List<Question> getQuestionByCategory(@PathVariable("category") String category){
-        return questionService.getQuestionsByCategory(category);
+    public ResponseEntity<ResponseDto> getQuestionByCategory(@PathVariable("category") String category){
+        ResponseDto response = new ResponseDto();
+        HttpStatus statusCode = HttpStatus.OK;
+
+        try {
+            response.setData(questionService.getQuestionsByCategory(category));
+            response.setSuccess(true);
+        } catch (Exception e) {
+            statusCode = HttpStatus.BAD_GATEWAY; 
+            response.setError(ErrorDTO.getErrorFromException(e));
+            response.setSuccess(false);
+            log.error("error in Getting Questions by Category error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+        }
+        return new ResponseEntity<>(response, statusCode);
     }
 
     @PostMapping("/add")
-    public Question addQuestion(@RequestBody Question question){
-        return questionService.addQuestion(question);
+    public ResponseEntity<ResponseDto> addQuestion(@RequestBody Question question){
+        ResponseDto response = new ResponseDto();
+        HttpStatus statusCode = HttpStatus.OK;
+
+        try {
+            response.setData(questionService.addQuestion(question));
+            response.setSuccess(true);
+        } catch (Exception e) {
+            statusCode = HttpStatus.BAD_GATEWAY; 
+            response.setError(ErrorDTO.getErrorFromException(e));
+            response.setSuccess(false);
+            log.error("error in Adding Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+        }
+        return new ResponseEntity<>(response, statusCode);
     }
 
     @PutMapping("/update")
-    public Question updateQuestion(@RequestBody Question question){
-        return questionService.updateQuestion(question);
+    public ResponseEntity<ResponseDto> updateQuestion(@RequestBody Question question){
+        ResponseDto response = new ResponseDto();
+        HttpStatus statusCode = HttpStatus.OK;
+
+        try {
+            response.setData(questionService.updateQuestion(question));
+            response.setSuccess(true);
+        } catch (Exception e) {
+            statusCode = HttpStatus.BAD_GATEWAY; 
+            response.setError(ErrorDTO.getErrorFromException(e));
+            response.setSuccess(false);
+            log.error("error in Updating Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+        }
+        return new ResponseEntity<>(response, statusCode);
     }
 
     @DeleteMapping("/delete")
-    public Question deleteQuestion(@RequestBody Question question){
-        return questionService.deleteQuestion(question);
+    public ResponseEntity<ResponseDto> deleteQuestion(@RequestBody Question question){
+        ResponseDto response = new ResponseDto();
+        HttpStatus statusCode = HttpStatus.OK;
+
+        try {
+            response.setData(questionService.deleteQuestion(question));
+            response.setSuccess(true);
+        } catch (Exception e) {
+            statusCode = HttpStatus.BAD_GATEWAY; 
+            response.setError(ErrorDTO.getErrorFromException(e));
+            response.setSuccess(false);
+            log.error("error in Deleting Questions error:{}, exception:{}", statusCode, ErrorDTO.getErrorFromException(e));
+        }
+        return new ResponseEntity<>(response, statusCode);
     }
 }
