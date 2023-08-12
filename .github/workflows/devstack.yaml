@@ -18,11 +18,11 @@ jobs:
         run: |
           echo "Don't cancel old workflow"
   build:
-    name: Build Cardholder Portal
+    name: Build Quiz App
     runs-on: [ self-hosted ]
     env:
-      REPO_NAME: razorpay/cardholder-portal
-      APP_NAME: cardholder-portal
+      REPO_NAME: VinayKiranP/quiz
+      APP_NAME: quiz
       GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
     steps:
       - name: Login to Harbor
