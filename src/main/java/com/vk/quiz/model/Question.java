@@ -13,7 +13,12 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String category;
+    private String title;
     private String difficultyLevel;
+    private String option1;
+    private String option2;
+    private String option3;
+    private String option4;
     private String answer;
     private Boolean deleted=false;
 }
