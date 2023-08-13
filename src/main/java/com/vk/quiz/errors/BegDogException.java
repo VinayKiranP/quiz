@@ -1,7 +1,7 @@
 package com.vk.quiz.errors;
 
+/*
 import org.springframework.http.HttpStatus;
-
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -31,3 +31,4 @@ public class BegDogException extends Exception {
     protected void Exception(java.lang.String arg0, java.lang.Throwable arg1, boolean arg2, boolean arg3) {
     }
 }
+ */

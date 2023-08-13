@@ -1,8 +1,5 @@
 package com.vk.quiz.controller;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vk.quiz.common.dtos.ErrorDTO;
 import com.vk.quiz.common.dtos.ResponseDto;
-import com.vk.quiz.errors.BegDogException;
 import com.vk.quiz.model.Question;
 import com.vk.quiz.service.QuestionService;
 
